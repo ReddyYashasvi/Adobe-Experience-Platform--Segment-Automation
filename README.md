@@ -33,36 +33,52 @@ This script handles the OAuth 2.0 authentication, fetches segment definitions fr
 
      The Python script handles the following tasks:
 
-     Loads configuration settings from a config.ini file.
-     Authenticates with the Adobe Experience Platform using OAuth 2.0.
-     Fetches segment definitions from the Adobe Experience Platform API.
-     Processes and saves the API response.
-     Filters the data and creates a DataFrame with specified columns.
-     Authenticates with Google Sheets using OAuth 2.0.
-     Creates or opens a Google Sheet named "Segment Definitions" and sends it to whose email is in the code 
+    - Loads configuration settings from a config.ini file.
+    - Authenticates with the Adobe Experience Platform using OAuth 2.0.
+    - Fetches segment definitions from the Adobe Experience Platform API.
+    - Processes and saves the API response.
+    - Filters the data and creates a DataFrame with specified columns.
+    - Authenticates with Google Sheets using OAuth 2.0.
+    - Creates or opens a Google Sheet named "Segment Definitions" and sends it to whose email is in the code 
      ** Remember to change the email to your email address under "# Creates or opens the Google Sheet " for access to the Google Sheet **
-     Clears existing content in the sheet and writes the filtered data to it.
+    - Clears existing content in the sheet and writes the filtered data to it.
 
 
 5. Transition to Google Apps Script
 After setting up the Jupyter Notebooks portion, the next step involves using Google Apps Script to automate the update of the Google Sheet with the segment definitions. The Google Apps Script will be responsible for fetching updated data and appending it to the Google Sheet on a scheduled basis.
 
-Google Apps Script Setup
+   a.) Google Apps Script Setup
 
-Access the 'Segment Defintions' sheet through your email
-Click on Extensions in the toolbar > AppScripts
-In AppScripts, click the '+' next to file to add a new script
-Copy the content of your Google Apps Script code and paste it into the script editor.
+       Access the 'Segment Defintions' sheet through your email
+       Click on Extensions in the toolbar > AppScripts
+       In AppScripts, click the '+' next to file to add a new script
+       Copy the content of your Google Apps Script code and paste it into the script editor.
+
+   b.) Add Script Properties
+   
+       Open the Script Properties page in your Google Apps Script project.
+       Add the following properties based on your AEP API credentials with their corresponding values:
+       Property: Authorization; Value: Bearer AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+       Property: CLIENT_SECRET Value: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+       Property: x-api-key Value: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+       Property: x-gw-ims-org-id Value: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+       Property: x-sandbox-name Value: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+
+   c.) Set Up Triggers
+   
+       Go to the Triggers page in your Google Apps Script project.
+       Set up a time-driven trigger to run the updateSheet function on a scheduled basis (e.g., every Monday).
+       
  
      Code Description
 
 
      The Google Apps Script portion of this project automates the updating of the Google Sheet with the latest segment definitions. The       script performs the following tasks:
 
-     Authenticates with Adobe Experience Platform using OAuth 2.0.
-     Fetches segment definitions from the API.
-     Handles pagination to ensure all segment definitions are fetched.
-     Appends the fetched data to the existing Google Sheet on a scheduled basis.
+    - Authenticates with Adobe Experience Platform using OAuth 2.0.
+    - Fetches segment definitions from the API.
+    - Handles pagination to ensure all segment definitions are fetched.
+    - Appends the fetched data to the existing Google Sheet on a scheduled basis.
 
 
 
