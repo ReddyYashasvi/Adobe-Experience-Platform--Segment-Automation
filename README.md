@@ -65,10 +65,12 @@ After setting up the Jupyter Notebooks portion, the next step involves using Goo
        Property: x-sandbox-name Value: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
    
   c.)  Run the Functions:
+
+
        In the Google Apps Script editor, run the following functions in the given order:
        getAccessToken: This function fetches the OAuth 2.0 access token required for authentication with the Adobe API.
        fetchData: This function uses the access token to fetch the latest segment definitions from the Adobe API.
-       updateSheet: This function updates the Google Sheet with the fetched segment definitions, including handling pagination to fetch         all data.
+       updateSheet: This function updates the Google Sheet with the fetched segment definitions, including handling pagination to fetch        all data.
 
    d.) Set Up Triggers
    
