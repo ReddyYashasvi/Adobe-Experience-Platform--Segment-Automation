@@ -64,7 +64,7 @@ After setting up the Jupyter Notebooks portion, the next step involves using Goo
        Property: x-gw-ims-org-id Value: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
        Property: x-sandbox-name Value: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
    
-  c.)  Run the Functions:
+  c.)  Run the Functions
 
 
        In the Google Apps Script editor, run the following functions in the given order:
