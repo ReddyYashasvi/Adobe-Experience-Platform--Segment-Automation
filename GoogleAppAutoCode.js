@@ -1,5 +1,5 @@
 const CLIENT_ID = PropertiesService.getScriptProperties().getProperty('x-api-key');
-const CLIENT_SECRET = 'p8e-aYZGpvFRZVUnLIvcf5a-BPTgkQFjdU69';
+const CLIENT_SECRET = PropertiesService.getScriptProperties().getProperty('CLIENT_SECRET');
 const ORG_ID = PropertiesService.getScriptProperties().getProperty('x-gw-ims-org-id');
 const SANDBOX_NAME = PropertiesService.getScriptProperties().getProperty('x-sandbox-name');
 const TOKEN_URL = 'https://ims-na1.adobelogin.com/ims/token/v3';
